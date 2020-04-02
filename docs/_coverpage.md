@@ -1,5 +1,5 @@
-\# Myblogs  
+# *Learning Notes* 
 
-我要开始装逼了
+## 如果没有人给你阳光，那就做自己的小太阳。
 
-[CSDN](https://blog.csdn.net/m0_37965018)[滚动鼠标](#introduction)
+[首 页](/#概述)

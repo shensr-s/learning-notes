@@ -1,28 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--主题Vue-->
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <!--主题Blue-->
+    <!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css">-->
+
 </head>
 <body>
- <nav>
-    <a href="#/">EN</a>
-    <a href="#/">中文</a>
-  </nav>
-  <div id="app">Please wait...</div>
-  <script>
+<!--导航-->
+<!-- <nav>-->
+<!--    <a href="#/">EN</a>-->
+<!--    <a href="#/">中文</a>-->
+<!--  </nav>-->
+<!--加载logo-->
+<div id="app">Please wait...</div>
+<script>
     window.$docsify = {
-	  loadSidebar: true,
-	  coverpage: true,
-	  themeColor: '#c30aff',
-      name: '',
-      repo: ''
+        loadSidebar: true, //左侧导航栏
+        nameLink: '/', //名称连接
+        // ga: 'UA-XXXXX-Y', //google统计
+        coverpage: true, // 首页
+        // autoHeader: true,
+        // themeColor: '#c30aff', // 主题颜色 默认随机
+        name: '学习笔记', //左侧导航栏显示名称
+        repo: 'https://github.com/HansGerry/learning-notes', //左上角github icon
+        // 底部配置
+        footer: {
+            copy: '',
+            auth: '小跟班',
+            pre: '<hr>',
+            style: 'text-align: center;'
+        },
+        // 翻页
+        pagination: {
+            previousText: '上一篇',
+            nextText: '下一篇',
+            crossChapter: true,
+            crossChapterText: true,
+        },
+        notFoundPage: '_404.md',
+        subMaxLevel: 4 ,//左侧目录深度
+        search: {
+            maxAge: 86400000,
+            paths: [],
+            placeholder: '搜索',
+            noData: '暂无匹配结果',
+            depth: 6,
+            hideOtherSidebarContent: false,
+            namespace: 'website-1',
+        }
     }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<!--图片缩放-->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<!--复制代码-->
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+<!--上一篇 下一篇-->
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<!--分享插件-->
+<script src="https://unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+<!--表情-->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<!--外链脚本插件-->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+<!--谷歌统计-->
+<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>-->
+<!--全文搜索-->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
