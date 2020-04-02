@@ -4,3 +4,5 @@
 
 [GitHub](https://github.com/HansGerry)
 
+[Gitee](https://gitee.com/szimo/learning-notes)
+

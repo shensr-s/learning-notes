@@ -1,6 +1,5 @@
-# Docsify教程 
-
-### Docsify是什么？
+# docsify安装教程 
+## Docsify是什么？
 `docsify`可以即时生成您的文档网站。与`GitBook`不同，它不会生成静态`html`文件。相反，它可以智能地加载和解析您的`Markdown`文件并将其显示为网站。要开始使用它，您所需要做的就是创建一个`index.html`并将其部署在`GitHub Pages`上。
 
 > GITHUB：[https://github.com/docsifyjs/docsify/](https://github.com/docsifyjs/docsify/)
@@ -11,7 +10,7 @@
 
 ### 安装
 
-首先要先安装`node.js`,[安装教程](tutorial/nodejs.md),然后打开命令行窗口执行如下命令
+首先要先安装`node.js`,[安装教程](tutorial/nodejs/nodejs.md),然后打开命令行窗口执行如下命令
 ```bash
 npm i docsify-cli -g
 ```
@@ -301,9 +300,7 @@ window.$docsify = {
 
 
 
-<br>
-<div id="social-share" style="text-align: left;">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-<div class="social-share" data-sites="qq,qzone,wechat,weibo,facebook,twitter"  data-wechat-qrcode-title="分享" data-wechat-qrcode-helper="使用微信扫一扫分享"></div>
+<div class="social-share"></div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-</div>

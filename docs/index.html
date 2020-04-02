@@ -30,7 +30,7 @@
         // autoHeader: true,
         // themeColor: '#c30aff', // 主题颜色 默认随机
         name: '学习笔记', //左侧导航栏显示名称
-        repo: 'https://github.com/HansGerry/learning-notes', //左上角github icon
+        repo: 'https://gitee.com/szimo/learning-notes', //左上角github icon
         // 底部配置
         footer: {
             copy: '',
@@ -46,10 +46,10 @@
             crossChapterText: true,
         },
         notFoundPage: '_404.md',
-        subMaxLevel: 4 ,//左侧目录深度
+        subMaxLevel: 4,//左侧目录深度
         search: {
             maxAge: 86400000,
-            paths: [],
+            paths: '/',
             placeholder: '搜索',
             noData: '暂无匹配结果',
             depth: 6,
@@ -75,5 +75,12 @@
 <!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>-->
 <!--全文搜索-->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+<script>
+    <!--离线模式-->
+    if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('sw.js')
+    }
+</script>
 </body>
 </html>
