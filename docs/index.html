@@ -24,10 +24,15 @@
 <script>
     window.$docsify = {
         loadSidebar: true, //左侧导航栏
+        autoHeader: true,
+        alias: {
+            '/.*/_sidebar.md': '/_sidebar.md'
+        },
         nameLink: '/', //名称连接
         // ga: 'UA-XXXXX-Y', //google统计
         coverpage: true, // 首页
         // autoHeader: true,
+        auto2top: true,
         // themeColor: '#c30aff', // 主题颜色 默认随机
         name: '学习笔记', //左侧导航栏显示名称
         repo: 'https://gitee.com/szimo/learning-notes', //左上角github icon
