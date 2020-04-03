@@ -45,13 +45,18 @@
             crossChapter: true,
             crossChapterText: true,
         },
+        copyCode: {
+            buttonText : '复制',
+            errorText  : '复制失败',
+            successText: '复制成功'
+        },
         notFoundPage: '_404.md',
         subMaxLevel: 4,//左侧目录深度
         search: {
             maxAge: 86400000,
             paths: '/',
-            placeholder: '搜索',
-            noData: '暂无匹配结果',
+            placeholder: '🔍点击搜索 ',
+            noData: '😞暂无匹配结果',
             depth: 6,
             hideOtherSidebarContent: false,
             namespace: 'website-1',
@@ -63,7 +68,7 @@
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <!--复制代码-->
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-<!--上一篇 下一篇-->
+<!--分页插件-->
 <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 <!--分享插件-->
 <script src="https://unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
@@ -71,11 +76,13 @@
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 <!--外链脚本插件-->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
-<!--谷歌统计-->
-<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>-->
 <!--全文搜索-->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-
+<!--语法高亮插件-->
+<script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<!--统计访问量插件-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
     <!--离线模式-->
     if (typeof navigator.serviceWorker !== 'undefined') {
