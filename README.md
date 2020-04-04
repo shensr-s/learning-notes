@@ -1,7 +1,7 @@
 # 关于项目
 <p align="center">
 <a href="https://szimo.gitee.io/learning-notes" target="_blank">
-	<img src="./favicon.ico" width=""/>
+	<img src="./dcos/favicon.ico" width=""/>
 </a>
 </p>
 <p align="center">
