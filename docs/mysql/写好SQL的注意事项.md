@@ -1,8 +1,8 @@
-# 写好SQL的30条建议
+# 写好SQL的注意事项
 
-> 参考： [写好SQL的30条建议](https://mp.weixin.qq.com/s/agUI7_OhMhyGRFWF662jVw)
+> 作者：子墨同学 
 >
-> 作者：捡田螺的小男孩 
+> 时间： 2020-04-03
 
 ##### 1、查询SQL尽量不要使用select *，而是select具体字段。
 
@@ -37,8 +37,7 @@ select id,name from employee;
 ```
 反例：
 ```sql
-
-   select id,name from employee where name='jay'
+select id,name from employee where name='jay';
 ```
 正例
 ```sql
@@ -72,11 +71,11 @@ select * from user where userid=1 or age =18
 ```
 正例：
 ```sql
-//使用union all
+-- 使用union all
 select * from user where userid=1 
 union all 
 select * from user where age = 18
-//或者分开两条sql写：
+-- 或者分开两条sql写：
 select * from user where userid=1
 select * from user where age = 18
 ```
@@ -97,13 +96,13 @@ select id,name,age from employee limit 10000,10
 ```
 正例：
 ```sql
-//方案一 ：返回上次查询的最大记录(偏移量)
+-- 方案一 ：返回上次查询的最大记录(偏移量)
 select id,name from employee where id>10000 limit 10
 
-//方案二：order by + 索引
+-- 方案二：order by + 索引
 select id,name from employee order by id  limit 10000,10
 
-//方案三：在业务允许的情况下限制页数：
+-- 方案三：在业务允许的情况下限制页数：
 ```
 理由：
 
@@ -225,7 +224,7 @@ select age,name  from user where age <>18;
 ```
 正例：
 ```sql
-//可以考虑分开两条sql写
+-- 可以考虑分开两条sql写
 select age,name  from user where age <18;
 select age,name  from user where age >18;
 ```
@@ -259,9 +258,9 @@ select * from user where age = 10;
 正例：
 
 ```sql
-//符合最左匹配原则
+-- 符合最左匹配原则
 select * from user where userid=10 and age =10;
-//符合最左匹配原则
+-- 符合最左匹配原则
 select * from user where userid =10;
 ```
 理由：
@@ -294,7 +293,7 @@ for(User u :list){
 ```
 正例：
 ```xml
-//一次500批量插入，分批进行
+-- 一次500批量插入，分批进行
 insert into user(name,age) values
 <foreach collection="list" item="item" index="index" separator=",">
     (#{item.name},#{item.age})
@@ -313,12 +312,12 @@ insert into user(name,age) values
 反例：
 
 ```sql
-// like模糊查询，不走索引了
+--  like模糊查询，不走索引了
 select * from user where userid like '%123%'
 ```
 正例：
 ```sql
-//id为主键，那么为普通索引，即覆盖索引登场了。
+-- id为主键，那么为普通索引，即覆盖索引登场了。
 select id,name from user where userid like '%123%';
 ```
 
@@ -349,7 +348,7 @@ select DISTINCT name from user;
 ```
 正例:
 ```sql
-  //删除userId索引，因为组合索引（A，B）相当于创建了（A）和（A，B）索引
+  -- 删除userId索引，因为组合索引（A，B）相当于创建了（A）和（A，B）索引
   KEY `idx_userId_age` (`userId`,`age`)
 ```
 理由：
@@ -363,16 +362,16 @@ select DISTINCT name from user;
 反例：
 
 ```sql
-//一次删除10万或者100万+？
+-- 一次删除10万或者100万+？
 delete from user where id <100000;
-//或者采用单一循环操作，效率低，时间漫长
+-- 或者采用单一循环操作，效率低，时间漫长
 for（User user：list）{
    delete from user;
 }
 ```
 正例：
 ```sql
-//分批进行删除,如每次500
+-- 分批进行删除,如每次500
 delete user where id<500
 delete product where id>=500 and id<1000;
 ```
@@ -389,7 +388,7 @@ select * from user where age is not null;
 ```
 正例：
 ```sql
-//设置0为默认值
+-- 设置0为默认值
 select * from user where age>0;
 ```
 理由：
@@ -518,15 +517,15 @@ king_id` varchar（20） NOT NULL COMMENT '守护者Id'
 反例：
 
 ```sql
-//一次性查询所有数据回来
+-- 一次性查询所有数据回来
 select * from LivingInfo where watchId =useId and watchTime >= Date_sub(now(),Interval 1 Y)
 ```
 正例：
 ```sql
-//分页查询
+-- 分页查询
 select * from LivingInfo where watchId =useId and watchTime>= Date_sub(now(),Interval 1 Y) limit offset，pageSize
 
-//如果是前端分页，可以先查询前两百条记录，因为一般用户应该也不会往下翻太多页，
+-- 如果是前端分页，可以先查询前两百条记录，因为一般用户应该也不会往下翻太多页，
 select * from LivingInfo where watchId =useId and watchTime>= Date_sub(now(),Interval 1 Y) limit 200 ;
 ```
 
@@ -598,3 +597,10 @@ select * from user where userid ='123';
 explain select * from user where userid =10086 or age =18;
 ```
 
+### 参考资料
+
+> [sql语句的优化分析]( https://www.cnblogs.com/knowledgesea/p/3686105.html)
+>
+> [Mysql优化原则_小表驱动大表IN和EXISTS的合理利用](https://segmentfault.com/a/1190000014509559)
+>
+> [写好SQL的30条建议](https://mp.weixin.qq.com/s/agUI7_OhMhyGRFWF662jVw)
