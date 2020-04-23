@@ -7,6 +7,8 @@
     * [写好SQL的注意事项](mysql/写好SQL的注意事项.md)
 *   SpringBoot
     * [异步邮件任务](springboot/mail/异步邮件任务.md)
+    * [定时任务](springboot/scheduled/SpringBoot定时任务.md)
+    * [Spring Boot+Redis实现点赞功能](springboot/点赞/点赞功能.md)
 *  教程
     * [Docsify教程](tutorial/Docsify教程.md)  
     * [nodejs](tutorial/nodejs.md)  

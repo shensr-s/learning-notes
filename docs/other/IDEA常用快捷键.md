@@ -38,6 +38,8 @@ psvm+Tab：生成main方法
 
 sout+Tab：生成输出语句
 
+Alt+Insert：生成Getter/Setter/Constructor
+
 Ctrl+Y：删除当前行
 
 Ctrl+D：复制当前行到下一行
@@ -111,52 +113,87 @@ Alt+F10：定位到断点
 ### 重构
 
 F5：   复制类
+
 F6 ：  移动类
+
 Alt+Delete：   安全删除，删除前会提示调用处
+
 Shift+F6：   重命名
+
 Ctrl+F6：   重构方法参数、Exception 等
+
 Ctrl+Alt+N：   合并多行为一行
+
 Ctrl+Alt+M：   提取为新方法
+
 Ctrl+Alt+V:   提取为新变量
+
 Ctrl+Alt+F:  提取为对象新属性
+
 Ctrl+Alt+C:   提取为新静态常量
 
 ### 版本控制/ 本地历史
 
 Ctrl+K   提交改动到 VCS
+
 Ctrl+T   从 VCS 上更新
+
 Alt+Shift+C   查看最近的改动记录
+
 Alt+BackQuote(`)   显示 VCS 操作列表
 
 ### Live Template
 
 Ctrl+Alt+J   使用 Live Template 包围选中代码
+
 Ctrl+J   快速插入 Live Template
+
 iter   快速生成 for…in 语句
+
 inst   快速生成”if instanceof”语句
+
 itco   快速生成 iterator 的 for 循环
+
 itit   快速生成 iterator 的 while 循环
+
 itli   快速生成 list 的 for(i)循环
+
 psf   快速生成“public static final” 语句
+
 thr   快速生成“throw new” 语句
 
 ### 代码生成
 
 Alt+0   聚焦到 Messages 窗口
+
 Alt+1   聚焦到 Project 窗口
+
 Alt+2   聚焦到 Favorite 窗口
+
 Alt+3   聚焦到 Find 窗口
+
 Alt+4   聚焦到 Run 窗口
+
 Alt+5   聚焦到 Debug 窗口
+
 Alt+6   聚焦到 TODO 窗口
+
 Alt+7   聚焦到 Structure 窗口
+
 Alt+8   聚焦到 Hierarchy 窗口
+
 Alt+9   聚焦到 Change 窗口
+
 Ctrl+S   保存文件
+
 Ctrl+Alt+Y   与本地文件同步
+
 Alt+Shift+F   添加到收藏夹
+
 Alt+Shift+I   检查当前文件，包括 Javadoc 问题、可能存在的 bug 等
+
 Ctrl+BackQuote (`)   模式切换，包括文本外观、快捷键、编辑器外观、代码样式。
+
 Ctrl+Alt+S   打开 settings 窗口
 
 ### 其他
