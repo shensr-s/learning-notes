@@ -9,11 +9,14 @@
     * [异步邮件任务](springboot/mail/异步邮件任务.md)
     * [定时任务](springboot/scheduled/SpringBoot定时任务.md)
     * [Spring Boot+Redis实现点赞功能](springboot/点赞/点赞功能.md)
+    * [数据交互](front/ajax/数据交互.md)
 *  教程
     * [Docsify教程](tutorial/Docsify教程.md)  
     * [nodejs](tutorial/nodejs.md)  
-*   note
-    * [数据交互](front/ajax/数据交互.md)
+*   Java开发手册
+    * [Integer缓存问题](阿里巴巴Java开发手册/Integer缓存问题.md)
+*   笔记
+    - [windows常用命令](note/win/windows常用的命令.md)
     
 *  其他
     * [markdown表情](other/markdown表情.md)
