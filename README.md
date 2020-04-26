@@ -19,6 +19,7 @@
 
 # 常用资源
 1. [shields.io](https://shields.io/)
+2. [hutool](https://hutool.cn/docs/#/)
 
 # 项目地址
  <!--[个人博客](https://blog.csdn.net/WEDUEST)-->
