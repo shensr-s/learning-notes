@@ -16,8 +16,14 @@
 2. [JavaGuide](https://snailclimb.gitee.io/javaguide)
 3. [《On Java 8》中文版](https://lingcoder.gitee.io/onjava8)
 4. [To Be Top Javaer - Java工程师成神之路](http://hollischuang.gitee.io/tobetopjavaer/#/)
+5. [Linux命令大全搜索工具](https://github.com/jaywcjlove/linux-command)
+
+# 开源项目
+
+1. [eblog](https://github.com/MarkerHub/eblog)
 
 # 常用资源
+
 1. [shields.io](https://shields.io/)
 2. [hutool](https://hutool.cn/docs/#/)
 
