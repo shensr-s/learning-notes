@@ -8,7 +8,9 @@
     * [创建型模式](设计模式/创建型模式/创建型模式.md)
         * [简单工厂模式](设计模式/创建型模式/简单工厂模式.md)
 *  数据库
-    * [写好SQL的注意事项](mysql/写好SQL的注意事项.md)
+    * [写好SQL的注意事项](数据库/mysql/写好SQL的注意事项.md)
+    * [explain](数据库/mysql/explain.md)
+    * [redis笔记](数据库/redis/Redis.md)
 *   SpringBoot
     * [异步邮件任务](springboot/mail/异步邮件任务.md)
     * [定时任务](springboot/scheduled/SpringBoot定时任务.md)
