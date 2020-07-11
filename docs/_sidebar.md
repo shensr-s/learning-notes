@@ -16,6 +16,7 @@
     * [定时任务](springboot/scheduled/SpringBoot定时任务.md)
     * [Spring Boot+Redis实现点赞功能](springboot/点赞/点赞功能.md)
     * [数据交互](front/ajax/数据交互.md)
+    * [自定义Starter](springboot/springboot/自定义starter.md)
 *   操作系统
     * [Linux常用命令-文件管理](操作系统/linux/Linux常用命令-文件管理.md)
     * [Linux常用命令-用户、权限相关](操作系统/linux/Linux常用命令-用户、权限相关.md)
@@ -23,7 +24,6 @@
     * [VIM](操作系统/linux/VIM.md)
 *  教程
     * [Docsify教程](tutorial/Docsify教程.md)  
-    * [nodejs](tutorial/nodejs.md)  
 *   Java开发手册
     * [Integer缓存问题](阿里巴巴Java开发手册/Integer缓存问题.md)
 *   笔记

@@ -166,7 +166,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.wrap.
 
 ![image-20200711175247085](images/image-20200711175247085.png)
 
-### (3)使用自定义的 Starter
+### （3）使用自定义的 Starter
 
 在本地要使用我们自定义的 Starter，首先要保证其已经被 Install 到了本地 Maven 库。
 
