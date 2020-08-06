@@ -33,3 +33,4 @@
 *  其他
     * [markdown表情](other/markdown表情.md)
     * [IDEA常用快捷键](other/IDEA常用快捷键.md)
+    * [收藏](other/常用地址收藏.md)

@@ -13,7 +13,7 @@
 3. **免责声明：** 本项目仅为个人学习交流使用，切勿作为商业用途，若将此项目作为商业用途，后果自负，与本项目无关。
 
 # 优质资源
-1. [effective-java-3rd-chinese](https://sjsdfg.github.io/effective-java-3rd-chinese/)
+1. [effective-java-3rd-chinese](https://github.com/it-ebooks/effective-java-3rd-chinese)
 2. [JavaGuide](https://snailclimb.gitee.io/javaguide)
 2. [《On Java 8》中文版](https://lingcoder.gitee.io/onjava8)
 
