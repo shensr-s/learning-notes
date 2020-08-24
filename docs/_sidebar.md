@@ -24,6 +24,7 @@
     * [VIM](操作系统/linux/VIM.md)
 *  教程
     * [Docsify教程](tutorial/Docsify教程.md)  
+    * [Typora+PicGO+Gitee配置图床](tutorial/Typora配置图床.md)  
 *   Java开发手册
     * [Integer缓存问题](阿里巴巴Java开发手册/Integer缓存问题.md)
 *   笔记
