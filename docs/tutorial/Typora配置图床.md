@@ -43,13 +43,17 @@
 
 > repo：仓库地址去掉码云域名
 >
-> 例如：https://gitee.com/XXXXX/images
-> 写成：XXXXX/images
+> 例如：https://gitee.com/szimo/picture_repository
+>
+> 写成：szimo/picture_repository
+>
 > branch：选择分支 默认为master
 >
 > token：上面设置的是私人令牌
+>
 > path：是仓库中新建images文件夹
-> 点击设为默认图床，点击确定
+>
+> **点击设为默认图床，点击确定**
 
 
 
