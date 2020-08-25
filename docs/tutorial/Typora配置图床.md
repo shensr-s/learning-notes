@@ -31,7 +31,13 @@
 
 ![image-20200824155051130](https://gitee.com/szimo/picture_repository/raw/master/images/20200824155051.png)
 
-### 下载picgo码云插件
+### 下载picgo
+
+下载地址：https://github.com/Molunerfinn/PicGo/tags
+
+![](https://gitee.com/szimo/picture_repository/raw/master/images/20200825193710.png)
+
+### 下载插件
 
 ![image-20200824155157339](https://gitee.com/szimo/picture_repository/raw/master/images/20200824155157.png)
 
@@ -89,3 +95,5 @@
 ### Typora使用
 
 直接在typora中ctrl+v即可完成上传
+
+如果上传失败，就先ctrl+shift+p上传，在ctrl+v复制即可
