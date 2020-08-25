@@ -141,3 +141,9 @@
 #### 总结
 
 遇到错误先看日志，方便排查
+
+### 参考资料
+
+[Typora+PicGo+Gitee实现Typora图片上传到图床](https://www.cnblogs.com/windowsxpxp/p/12694524.html)
+
+[手把手教你用Typora自动上传到picgo图床【教程与排坑】](https://blog.csdn.net/disILLL/article/details/104944710)
