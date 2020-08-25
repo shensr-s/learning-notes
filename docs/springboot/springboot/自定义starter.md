@@ -16,14 +16,14 @@
 
 项目结构
 
-![image-20200711180324527](images/image-20200711180324527.png)
+![image-20200711180324527](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201903.png)
 
 **A 、 创建工程**
 创建一个 Spring Boot 工程，命名为 wrap-spring-boot-starter，并导入 `Configuration Processor` 与 `Lombok` 依赖。
 
-![image-20200711170201584](images/image-20200711170201584.png)
+![image-20200711170201584](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201904.png)
 
-![image-20200711170318449](images/image-20200711170318449.png)
+![image-20200711170318449](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201905.png)
 
 导入的配置处理器依赖为：
 
@@ -164,7 +164,7 @@ public class WrapServiceAutoConfiguration {
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.wrap.config.WrapServiceAutoConfiguration
 ```
 
-![image-20200711175247085](images/image-20200711175247085.png)
+![image-20200711175247085](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201906.png)
 
 ### （3）使用自定义的 Starter
 
@@ -174,7 +174,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.example.wrap.
 
 创建一个 Spring Boot 工程，仅需要一个 web 依赖。
 
-![image-20200711175412527](images/image-20200711175412527.png)
+![image-20200711175412527](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201907.png)
 
 #### **B.导入自定义 Starter 依赖**
 
@@ -215,8 +215,8 @@ public String wrap(@PathVariable String word){
 
 启动类无需修改，直接启动运行即可
 
-![image-20200711180054429](images/image-20200711180054429.png)
+![image-20200711180054429](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201908.png)
 
 如果wrap.service.enable不为true，则结果如下
 
-![image-20200711180232557](images/image-20200711180232557.png)
+![image-20200711180232557](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201909.png)

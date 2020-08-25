@@ -97,3 +97,47 @@
 直接在typora中ctrl+v即可完成上传
 
 如果上传失败，就先ctrl+shift+p上传，在ctrl+v复制即可
+
+### 小技巧
+
+可以选择 *格式*`->`*图像*`->`*上传所有本地图片*
+
+![image-20200825202023658](https://gitee.com/szimo/picture_repository/raw/master/images/20200825202023.png)
+
+
+
+
+
+
+
+### 常见问题
+
+#### 错误一：Failed to fetch
+
+![image-20200825201128870](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201128.png)
+
+这个错误一般是由**端口设置错误**造成的（查看日志log文件），打开picgo的log文件。错误提示是端口繁忙。
+
+![image-20200825201250106](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201250.png)
+
+*解决方法*：打开PicGo设置，点击设置Server选项，**将端口改为36677端口**，这是picgo推荐的默认端口号，然后保存。
+
+![image-20200825201353246](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201353.png)
+
+不过有的时候，Failed to fetch还是如约而至，打开端口设置一看，怎么变成了366771或者其他的端口了？？？？
+
+问题在于端口冲突，如果你打开了多个picgo程序，就会端口冲突，**picgo自动帮你把36677端口改为366771端口**，导致错误。log文件里也写得很清楚。
+
+![image-20200825201515624](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201515.png)
+
+#### 错误二：{“success”,false}
+
+![image-20200825201557597](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201557.png)
+
+原因是**文件名冲突**了，如果你上传过一张image1.jpg的图片，再上传名称一样的图片就会失败，看看log文件里也写到了。
+
+![image-20200825201644385](https://gitee.com/szimo/picture_repository/raw/master/images/20200825201644.png)
+
+#### 总结
+
+遇到错误先看日志，方便排查
