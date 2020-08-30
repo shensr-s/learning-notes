@@ -10,39 +10,296 @@
 
 
 
-## 概述
+## 最常⽤的 Git 命令总结
 
-### 最常⽤的 Git 命令总结
+### 1. 本地库初始化
+
+*命令*：`git init`
+
+*效果*：
+
+![image-20200829225817887](https://gitee.com/szimo/picture_repository/raw/master/images/20200829225817.png)
+
+*注意*：`.git` 目录中存放的是本地库相关的子目录和文件，**不要删除，也不要胡**
+**乱修改**。
+
+### 2. 设置签名
+
+- *形式*
+
+  - 用户名：tom
+
+  - Email 地址：tom@outlook.com
+    - 作用：区分不同开发人员的身份
+    - 辨析：**这里设置的签名和登录远程库(代码托管中心)的账号、密码没有任何关系**。
+
+- *命令*
+
+  - *项目级别/仓库级别*：**仅在当前本地库范围内有效**
+    - `git config user.name tom`
+    - `git config user.email tom@outlook.com`
+    - 信息保存位置：`./.git/config` 文件
+    - ![image-20200829230446209](https://gitee.com/szimo/picture_repository/raw/master/images/20200829230446.png)
+  - *系统用户级别*：登录当前操作系统的用户范围
+    -  `git config --global user.name tom`
+    -  `git config --global tom@outlook.com`
+    -  信息保存位置：`~/.gitconfig` 文件 windows就是`C:\Users\用户名\.gitconfig` 文件
+    - ![image-20200829231143069](https://gitee.com/szimo/picture_repository/raw/master/images/20200829231143.png)
+  - *级别优先级*
+    - 就近原则：**项目级别优先于系统用户级别，二者都有时采用项目级别的签名**
+    - 如果只有系统用户级别的签名，就以系统用户级别的签名为准
+    - 二者都没有不允许
+
+### 3. 基本操作
+
+#### （1）状态查看
+
+*命令*：`git status`
+
+*描述*：查看工作区、暂存区状态
+
+#### （2）添加
+
+*命令*：`git add [file name]`
+*描述*：将工作区的“新建/修改”的文件添加到暂存区
+
+#### （3）提交
+
+*命令*：`git commit -m "commit message" [file name]`
+*描述*：将暂存区的内容提交到本地库
+
+#### （4）查看历史记录
+
+*命令*：git log
+
+*多屏显示控制方式*：
+
+- 空格向下翻页
+- b 向上翻页
+- q 退出
+
+![image-20200830120151501](https://gitee.com/szimo/picture_repository/raw/master/images/20200830120151.png)
+
+*命令*：`git log --pretty=oneline`
+
+*描述*：显示完整的commit id
+
+![image-20200830120406355](https://gitee.com/szimo/picture_repository/raw/master/images/20200830120406.png)
+
+*命令*：`git log --oneline`
+
+*描述*：显示部分的commit id
+
+![image-20200830120528042](https://gitee.com/szimo/picture_repository/raw/master/images/20200830120528.png)
+
+*命令*：`git reflog`
+
+*描述*：可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
+
+![image-20200830120732252](https://gitee.com/szimo/picture_repository/raw/master/images/20200830120732.png)
+
+*注意*：`HEAD@{移动到当前版本需要多少步}`
+
+#### （5）前进后退
+
+*本质*
+
+![image-20200830121208042](https://gitee.com/szimo/picture_repository/raw/master/images/20200830121208.png)
+
+*基于索引值操作[推荐]*
+
+- `git reset --hard [局部索引值]`
+- `git reset --hard a6ace91`
+
+*使用^符号：只能后退*
+
+-  `git reset --hard HEAD^`  后退一步
+- `git reset --hard HEAD^^` 后退两步
+- 注：一个^表示后退一步，n 个表示后退 n 步
+
+*使用~符号：只能后退*
+
+- git reset --hard HEAD~n
+-  注：表示后退 n 步
+
+####  （6）reset 命令的三个参数对比
+
+*--soft 参数*
+
+- 仅仅在本地库移动 HEAD 指针
+
+*--mixed 参数*
+
+- 在本地库移动 HEAD 指针
+- 重置暂存区
+
+*--hard 参数*
+
+- 在本地库移动 HEAD 指针
+- 重置暂存区
+- 重置工作区
+
+####  （7）删除文件并找回
+
+*前提*：删除前，文件存在时的状态提交到了本地库。
+
+*操作*：`git reset --hard [指针位置]`
+
+- 删除操作已经提交到本地库：指针位置指向历史记录
+- 删除操作尚未提交到本地库：指针位置使用 HEAD
+
+#### （8）比较文件差异
+
+- `git diff [文件名]`
+  - 将工作区中的文件和暂存区进行比较
+- `git diff [本地库中历史版本] [文件名]`
+  - 将工作区中的文件和本地库历史记录比较
+- 不带文件名比较多个文件
+
+### 4. 分支管理
+
+#### （1）作用
+
+在版本控制过程中，使用多条线同时推进多个任务。
+
+#### （2）好处
+
+- 同时并行推进多个功能开发，提高开发效率
+- 各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支有任何影响。失败的分支删除重新开始即可。
+
+#### （3）分支操作
+
+*创建分支*
+
+`git branch [分支名]`
+
+*查看分支*
+
+`git branch -v`
+
+*切换分支*
+
+git checkout [分支名]
+
+*合并分支*
+
+- 第一步：**切换到接受修改的分支（被合并，增加新内容）上**
+  - `git checkout [被合并分支名]`
+
+- 第二步：执行 merge 命令
+
+  - `git merge [有新内容分支名]`
+
+- 例如想把iss53分支合并到master
+
+  - ```console
+    git checkout master
+    git merge iss53
+    ```
+
+*新建一个分支并同时切换到该分支上*
+
+`git checkout -b [分支名]`
+
+它是下面两条命令的简写
+
+```console
+git branch [分支名]
+git checkout [分支名]
+```
+
+*解决冲突*
+
+- 冲突的表现
+
+![image-20200830124033713](https://gitee.com/szimo/picture_repository/raw/master/images/20200830124033.png)
+
+- 冲突的解决
+  - 第一步：编辑文件，删除特殊符号
+  - 第二步：把文件修改到满意的程度，保存退出
+  - 第三步：git add [文件名]
+  - 第四步：git commit -m "日志信息"
+    - 注意：**此时 commit 一定不能带具体文件名**
+
+### 5. 远程库
+
+#### （1）创建远程库地址别名
+
+`git remote -v` 查看当前所有远程地址别名
+
+![image-20200830124527422](https://gitee.com/szimo/picture_repository/raw/master/images/20200830124527.png)
+
+`git remote add [别名] [远程地址]`  添加远程库地址和别名
+
+#### （2）推送 
+
+ `git push [别名] [分支名]` 推送到远程库
+
+![image-20200830125500833](https://gitee.com/szimo/picture_repository/raw/master/images/20200830125500.png)
+
+#### （3）克隆
+
+*命令*：`git origin [远程地址]`
+
+![image-20200830125741371](https://gitee.com/szimo/picture_repository/raw/master/images/20200830125741.png)
+
+*效果*
+
+- 完整的把远程库下载到本地
+- 创建 origin 远程地址别名
+- 初始化本地库
+
+#### （4）拉取
+
+- `pull=fetch+merge`
+- `git fetch [远程库地址别名] [远程分支名]`   
+  - `git fetch`是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中
+- `git merge` [远程库地址别名/远程分支名]
+- `git pull` [远程库地址别名] [远程分支名]
+  - `git pull` 则是将远程主机的最新内容拉下来后直接合并
+
+
+
+
+
+--------------------
+
+----------------
+
+---------------
+
+### 6.  其他命令
 
 #### 分⽀操作
 
-1. git branch 创建分⽀
-2. git branch -b 创建并切换到新建的分⽀上
-3. git checkout 切换分⽀
-4. git branch 查看分⽀列表
-5. git branch -v 查看所有分⽀的最后⼀次操作
-6. git branch -vv 查看当前分⽀
-7. git brabch -b 分⽀名 origin/分⽀名 创建远程分⽀到本地
-8. git branch --merged 查看别的分⽀和当前分⽀合并过的分⽀
-9. git branch --no-merged 查看未与当前分⽀合并的分⽀
-10. git branch -d 分⽀名 删除本地分⽀
-11. git branch -D 分⽀名 强⾏删除分⽀
-12. git branch origin :分⽀名 删除远处仓库分⽀
-13. git merge 分⽀名 合并分⽀到当前分⽀上
-暂存操作
-1. git stash 暂存当前修改
-2. git stash apply 恢复最近的⼀次暂存
-3. git stash pop 恢复暂存并删除暂存记录
-4. git stash list 查看暂存列表
-5. git stash drop 暂存名(例：stash@{0}) 移除某次暂存
-6. git stash clear 清除暂存
+1. `git branch [分支名]` 创建分⽀
+2. `git branch -b [分支名]` 创建并切换到新建的分⽀上
+3. `git checkout [分支名]` 切换分⽀
+4. `git branch` 查看分⽀列表
+5. `git branch -v` 查看所有分⽀的最后⼀次操作
+6. `git branch -vv` 查看当前分⽀
+7. `git brabch -b [分⽀名] origin/[分⽀名]` 创建远程分⽀到本地
+8. `git branch --merged` 查看别的分⽀和当前分⽀合并过的分⽀
+9. `git branch --no-merged` 查看未与当前分⽀合并的分⽀
+10. `git branch -d [分⽀名]` 删除本地分⽀
+11. `git branch -D [分⽀名]` 强⾏删除分⽀
+12. `git branch origin :[分⽀名]` 删除远处仓库分⽀
+13. `git merge [分⽀1]` 合并分⽀1到当前分⽀上
+
+#### 暂存操作
+
+1. `git stash` 暂存当前修改
+2. `git stash apply` 恢复最近的⼀次暂存
+3. `git stash pop` 恢复暂存并删除暂存记录
+4. `git stash list` 查看暂存列表
+5. `git stash drop` 暂存名(例：stash@{0}) 移除某次暂存
+6. `git stash clear` 清除暂存
 
 #### 回退操作
 
-1. git reset --hard HEAD^ 回退到上⼀个版本
-2. git reset --hard ahdhs1(commit_id) 回退到某个版本
-3. git checkout -- file撤销修改的⽂件(如果⽂件加⼊到了暂存区，则回退到暂存区的，如果⽂件加⼊到了版本库，则还原⾄加
-  ⼊版本库之后的状态)
+1. `git reset --hard HEAD^` 回退到上⼀个版本
+2. `git reset --hard ahdhs1(commit_id)` 回退到某个版本
+3. git checkout -- file 撤销修改的⽂件(如果⽂件加⼊到了暂存区，则回退到暂存区的，如果⽂件加⼊到了版本库，则还原⾄加⼊版本库之后的状态)
 4. git reset HEAD file 撤回暂存区的⽂件修改到⼯作区
 
 #### 标签操作
@@ -66,20 +323,17 @@
 5. git merge --no-ff -m '合并描述' 分⽀名 不使⽤Fast forward⽅式合并，采⽤这种⽅式合并可以看到合并记录
 6. git check-ignore -v ⽂件名 查看忽略规则
 7. git add -f ⽂件名 强制将⽂件提交
-  git创建项⽬仓库
+    git创建项⽬仓库
 8. git init 初始化
 9. git remote add origin url 关联远程仓库
 10. git pull
-11. git fetch 获取远程仓库中所有的分⽀到本地
-   忽略已加⼊到版本库中的⽂件
+11. git fetch 获取远程仓库中所有的分⽀到本地，忽略已加⼊到版本库中的⽂件
 12. git update-index --assume-unchanged file 忽略单个⽂件
-13. git rm -r --cached ⽂件/⽂件夹名字 (. 忽略全部⽂件)
-   取消忽略⽂件
-14. git update-index --no-assume-unchanged file
-   拉取、上传免密码
+13. git rm -r --cached ⽂件/⽂件夹名字 (. 忽略全部⽂件) 取消忽略⽂件
+14. git update-index --no-assume-unchanged file 拉取、上传免密码
 15. git config --global credential.helper store
 
-### ⾼频使⽤的 Git 命令
+### 7. ⾼频使⽤的 Git 命令
 `git log`
 
 > 查看⽇志，常规操作，必备
@@ -247,7 +501,7 @@ git diff
 git 的常⽤命令其实很好掌握，很多命令都有 Linux 的影⼦。
 列出来的命令都是⾼频使⽤的，或许有⼀些更骚的姿势没有摸索到，
 
-### Git 基本操作
+### 8. Git 基本操作
 
 `git init`
 
@@ -468,6 +722,6 @@ git rm –r *
 git mv README.md  NEW_README.md
 ```
 
-## 常用命令
+
 
 ## 参考资料
