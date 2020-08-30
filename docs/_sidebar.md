@@ -30,6 +30,7 @@
 *   笔记
     * [windows常用命令](note/win/windows常用的命令.md)
     * [查看日志的相关命令](note/log/查看日志的相关命令.md)
+    * [Git相关](note/Git.md)
     
 *  其他
     * [markdown表情](other/markdown表情.md)
