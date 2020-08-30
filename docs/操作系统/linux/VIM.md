@@ -11,7 +11,7 @@
 
 ### Vim/Vi 工作模式
 
-![image-20200428112248220](images/image-20200428112248220.png)
+![image-20200428112248220](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174155.png)
 
 ### 插入命令
 

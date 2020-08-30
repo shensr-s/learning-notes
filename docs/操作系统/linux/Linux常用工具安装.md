@@ -75,7 +75,7 @@ rm -rf /var/lib/docker
 docker ps -a
 ```
 
-![image-20200531190609315](images/image-20200531190609315.png)
+![image-20200531190609315](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174040.png)
 
 ### 移除容器
 
@@ -97,11 +97,11 @@ docker exec -it app bash #app 为容器的名称  如mysql等 --name 设置的
 
 [http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-![image-20200524175053707](images/image-20200524175053707.png)
+![image-20200524175053707](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174052.png)
 
 ### 使用XFTP工具导入linux
 
-![image-20200524175322907](images/image-20200524175322907.png)
+![image-20200524175322907](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174053.png)
 
 ### 解压到/root/software目录
 

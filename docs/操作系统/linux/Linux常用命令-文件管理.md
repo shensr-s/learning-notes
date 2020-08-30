@@ -32,9 +32,9 @@ Linux文件或者目录名称最长可以有265个字符，“.”代表当前�
 
 #### 字段说明
 
-![image-20200427184440558](images/image-20200427184440558.png)
+![image-20200427184440558](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174117.png)
 
-![image-20200427211203164](images/image-20200427211203164.png)
+![image-20200427211203164](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174118.png)
 
 第1个字母代表文件的类型：
 

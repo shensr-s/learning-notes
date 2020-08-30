@@ -82,7 +82,7 @@ cat /etc/passwd #查看系统当前用户名
 
 用户也可以直接使用该命令来修改自己的口令，而无需在命令后面使用用户名。
 
-![image-20200427213959224](images/image-20200427213959224.png)
+![image-20200427213959224](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174143.png)
 
 ### 删除用户：userdel
 
@@ -199,10 +199,10 @@ chmod 751 file：
 
 语法 ：`chown 用户名 文件名`
 
-![image-20200427215414600](images/image-20200427215414600.png)
+![image-20200427215414600](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174144.png)
 
 ### 修改文件所属组：chgrp
 
 语法：`chgrp 用户组 文件名`
 
-![image-20200427215553597](images/image-20200427215553597.png)
+![image-20200427215553597](https://gitee.com/szimo/picture_repository/raw/master/images/20200828174145.png)
