@@ -14,14 +14,15 @@
 
 ### 1. 本地库初始化
 
+#### （1）初始化本地库
+
 *命令*：`git init`
 
 *效果*：
 
 ![image-20200829225817887](https://gitee.com/szimo/picture_repository/raw/master/images/20200829225817.png)
 
-*注意*：`.git` 目录中存放的是本地库相关的子目录和文件，**不要删除，也不要胡**
-**乱修改**。
+*注意*：`.git` 目录中存放的是本地库相关的子目录和文件，**不要删除，也不要随意修改**。
 
 ### 2. 设置签名
 
@@ -29,23 +30,28 @@
 
   - 用户名：tom
 
-  - Email 地址：tom@outlook.com
+  - Email地址：tom@outlook.com
     - 作用：区分不同开发人员的身份
     - 辨析：**这里设置的签名和登录远程库(代码托管中心)的账号、密码没有任何关系**。
 
 - *命令*
 
   - *项目级别/仓库级别*：**仅在当前本地库范围内有效**
+    
     - `git config user.name tom`
     - `git config user.email tom@outlook.com`
     - 信息保存位置：`./.git/config` 文件
-    - ![image-20200829230446209](https://gitee.com/szimo/picture_repository/raw/master/images/20200829230446.png)
-  - *系统用户级别*：登录当前操作系统的用户范围
+    
+      ![image-20200829230446209](https://gitee.com/szimo/picture_repository/raw/master/images/20200829230446.png)
+  - *系统用户级别*：**登录当前操作系统的用户范围**
+    
     -  `git config --global user.name tom`
     -  `git config --global tom@outlook.com`
-    -  信息保存位置：`~/.gitconfig` 文件 windows就是`C:\Users\用户名\.gitconfig` 文件
-    - ![image-20200829231143069](https://gitee.com/szimo/picture_repository/raw/master/images/20200829231143.png)
+    - 信息保存位置：`~/.gitconfig`文件 windows就是`C:\Users\用户名\.gitconfig` 文件
+    
+      ![image-20200829231143069](https://gitee.com/szimo/picture_repository/raw/master/images/20200829231143.png)
   - *级别优先级*
+    
     - 就近原则：**项目级别优先于系统用户级别，二者都有时采用项目级别的签名**
     - 如果只有系统用户级别的签名，就以系统用户级别的签名为准
     - 二者都没有不允许
@@ -70,7 +76,7 @@
 
 #### （4）查看历史记录
 
-*命令*：git log
+*命令*：`git log`
 
 *多屏显示控制方式*：
 
@@ -94,7 +100,7 @@
 
 *命令*：`git reflog`
 
-*描述*：可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
+*描述*：可以查看所有分支的所有操作记录（包括已经被删除的 commit记录和reset的操作）
 
 ![image-20200830120732252](https://gitee.com/szimo/picture_repository/raw/master/images/20200830120732.png)
 
@@ -102,7 +108,9 @@
 
 #### （5）前进后退
 
-*本质*
+*命令*：`git reset`
+
+*本质*：
 
 ![image-20200830121208042](https://gitee.com/szimo/picture_repository/raw/master/images/20200830121208.png)
 
@@ -124,20 +132,26 @@
 
 ####  （6）reset 命令的三个参数对比
 
-*--soft 参数*
+IDEA中操作截图
 
-- 仅仅在本地库移动 HEAD 指针
+![image-20200904155313954](https://gitee.com/szimo/picture_repository/raw/master/images/20200904155314.png)
 
-*--mixed 参数*
+`--soft 参数`
 
-- 在本地库移动 HEAD 指针
+- 仅仅在本地库移动HEAD指针
+
+`--mixed 参数`
+
+- 在本地库移动HEAD指针
 - 重置暂存区
 
-*--hard 参数*
+`--hard 参数`
 
-- 在本地库移动 HEAD 指针
+- 在本地库移动HEAD指针
 - 重置暂存区
 - 重置工作区
+
+
 
 ####  （7）删除文件并找回
 
@@ -160,7 +174,8 @@
 
 #### （1）作用
 
-在版本控制过程中，使用多条线同时推进多个任务。
+- 在版本控制过程中，使用多条线同时推进多个任务。
+
 
 #### （2）好处
 
@@ -179,31 +194,32 @@
 
 *切换分支*
 
-git checkout [分支名]
+`git checkout [分支名]`
 
 *合并分支*
 
 - 第一步：**切换到接受修改的分支（被合并，增加新内容）上**
-  - `git checkout [被合并分支名]`
-
+  
+- `git checkout [被合并分支名]`
+  
 - 第二步：执行 merge 命令
 
   - `git merge [有新内容分支名]`
 
 - 例如想把iss53分支合并到master
 
-  - ```console
+  - ```shell
     git checkout master
     git merge iss53
     ```
 
-*新建一个分支并同时切换到该分支上*
+*新建一个分支并同时切换到该分支上* （常用的还是这个）
 
 `git checkout -b [分支名]`
 
 它是下面两条命令的简写
 
-```console
+```shell
 git branch [分支名]
 git checkout [分支名]
 ```
@@ -239,23 +255,28 @@ git checkout [分支名]
 
 #### （3）克隆
 
-*命令*：`git origin [远程地址]`
+*命令*：`git clone [远程地址]`
 
 ![image-20200830125741371](https://gitee.com/szimo/picture_repository/raw/master/images/20200830125741.png)
 
-*效果*
+*效果*：
 
 - 完整的把远程库下载到本地
-- 创建 origin 远程地址别名
+- 创建`origin`远程地址别名
 - 初始化本地库
+
+*注意*：
+
+- 默认会把远程仓库**整个**下载下来
+- **只会在本地默认创建一个master分支，如果远程还有其他的分支，需要手动创建本地仓库中分支和远端分支的对应关系**
 
 #### （4）拉取
 
 - `pull=fetch+merge`
-- `git fetch [远程库地址别名] [远程分支名]`   
+- `git fetch [远程库地址别名] [远程分支名]` 
   - `git fetch`是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中
-- `git merge` [远程库地址别名/远程分支名]
-- `git pull` [远程库地址别名] [远程分支名]
+- `git merge [远程库地址别名/远程分支名]`
+- `git pull [远程库地址别名] [远程分支名]`
   - `git pull` 则是将远程主机的最新内容拉下来后直接合并
 
 
@@ -410,10 +431,9 @@ git reset --keep commit_sha1
 git revert commit- sha1
 ```
 
-`git rebase`
+`git rebase` 
 
-
-变基在项⽬中算是很频繁的，为什么这么说。
+**变基在项⽬中算是很频繁的，**为什么这么说。
 ⽐如你开发⼀个新的 feature, 遵循最⼩化代码提交的理念。
 在整个功能开发完毕的时侯，会有⾮常多的 commit，⽤ rebase 可以让我们的commit记录很⼲净
 git rebase -i git-sha1|branch(HEAD)
