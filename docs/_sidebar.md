@@ -22,6 +22,9 @@
     * [Linux常用命令-用户、权限相关](操作系统/linux/Linux常用命令-用户、权限相关.md)
     * [Linux常用命令-系统相关](操作系统/linux/Linux常用命令-系统相关.md)
     * [VIM](操作系统/linux/VIM.md)
+*  服务器
+    * [Nginx服务器](服务器/Nginx/Nginx.md)
+    * [内网转发到外网](服务器/Nginx/内网转发到外网.md)
 *  进阶
     * [工作流--Activiti（基础）](进阶/工作流/Activiti（基础）.md)
     * [工作流--Activiti（进阶）](进阶/工作流/Activiti（基础）.md)
