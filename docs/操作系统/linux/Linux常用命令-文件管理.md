@@ -511,6 +511,14 @@ tar命令很特殊，其参数前面可以使用“-”，也可以不使用。
 压缩后文件格式：.tar.gz
 ```
 
+### Xshell中文件上传（rz）与下载（sz filename）
+
+*Linux安装命令*：`yum install lrzsz`
+
+**rz**：从本地上传文件至服务器
+
+**sz filename**：从服务器下载文件至本地
+
 ### 文件压缩解压：gzip【了解】
 
 tar与gzip命令结合使用实现文件打包、压缩。 tar只负责打包文件，但不压缩，用gzip压缩tar打包后的文件，其扩展名一般用xxxx.tar.gz。
