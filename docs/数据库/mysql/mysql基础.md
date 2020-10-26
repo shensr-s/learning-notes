@@ -172,7 +172,7 @@ drop user 用户名@localhost
 **MySQL** **赋予用户权限命令的简单格式可概括为：**
  `grant 权限 on 数据库对象 to 用户`
 
-###### 1.`grant`普通数据用户，查询、插入、更新、删除 数据库中所有表数据的权利。
+###### 1.grant普通数据用户，查询、插入、更新、删除 数据库中所有表数据的权利。
 
 ```mysql
  grant select on testdb.* to common_user@’%’
@@ -347,20 +347,31 @@ mysql> update user set password=password('123') where user='root' and host='loca
 mysql> flush privileges; 
 ```
 
-######  方法4：在忘记root密码的时候，可以这样 
+######  方法4：在忘记root密码的时候，可以这样（5.7以下没有password（"123"）这个方法）
 
 ​	 以windows为例： 
 
 1. 关闭正在运行的MySQL服务。 
+
 2. 打开DOS窗口，转到mysql\bin目录。 
+
 3. 输入mysqld --skip-grant-tables 回车。--skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。 
-4.  再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql\bin目录。 
-5.  输入mysql回车，如果成功，将出现MySQL提示符 >。 
-6.  连接权限数据库： use mysql; 。 
-7.  改密码：update user set password=password("123") where user="root";（别忘了最后加分号） 。 
-8. 刷新权限（必须步骤）：flush privileges;　。 
-9.  退出 quit。 
-10. 注销系统，再进入，使用用户名root和刚才设置的新密码123登录。 
+
+4. 再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql\bin目录。 
+
+5. 输入mysql回车，如果成功，将出现MySQL提示符 >。 
+
+6. 连接权限数据库： use mysql; 。 
+
+7. 改密码：update user set password=password("123") where user="root";（别忘了最后加分号） 。 
+
+8. > 注意：5.7以下要使用update mysql.user set authentication_string=password('root') where user='root';
+
+9. 刷新权限（必须步骤）：flush privileges;　。 
+
+10. 退出 quit。 
+
+11. 注销系统，再进入，使用用户名root和刚才设置的新密码123登录。 
 
 ## MySQL语法
 
